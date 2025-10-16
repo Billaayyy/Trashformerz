@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>TRASHFORMERS — Green Campus Movement</title>
+    <meta name="description" content="TRASHFORMERS: aksi kampus hijau. Edukasi lingkungan, gerakan bersih, dan kolaborasi komunitas untuk bumi yang lebih hijau." />
+    <meta name="author" content="TRASHFORMERS" />
+
+    <link rel="canonical" href="/" />
+
+    <meta property="og:title" content="TRASHFORMERS — Green Campus Movement" />
+    <meta property="og:description" content="Gerakan peduli lingkungan di kampus: edukasi, aksi bersih, dan kegiatan sukarela." />
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content="https://lovable.dev/opengraph-image-p98pqg.png" />
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:site" content="@lovable_dev" />
+    <meta name="twitter:image" content="https://lovable.dev/opengraph-image-p98pqg.png" />
+  </head>
+
+  <body>
+    <div id="root"></div>
+    <script>
+      // GitHub Pages SPA redirect handler
+      (function() {
+        var redirect = sessionStorage.redirect;
+        delete sessionStorage.redirect;
+        if (redirect && redirect !== location.href) {
+          history.replaceState(null, null, redirect);
+        }
+      })();
+    </script>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>

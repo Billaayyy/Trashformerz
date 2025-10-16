@@ -1,0 +1,123 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
+All colors MUST be HSL.
+*/
+
+@layer base {
+  :root {
+    /* Light theme - Green campus identity */
+    --background: 0 0% 100%;
+    --foreground: 222.2 84% 4.9%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 222.2 84% 4.9%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 222.2 84% 4.9%;
+
+    --primary: 158 64% 28%; /* Emerald Green */
+    --primary-foreground: 140 30% 98%;
+
+    --secondary: 140 20% 94%;
+    --secondary-foreground: 142 47% 18%;
+
+    --muted: 140 16% 92%;
+    --muted-foreground: 141 8% 35%;
+
+    --accent: 170 65% 38%; /* Deep Teal */
+    --accent-foreground: 140 30% 98%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 140 16% 85%;
+    --input: 140 16% 85%;
+    --ring: 158 64% 28%;
+
+    --radius: 0.75rem;
+
+    /* Sidebar semantic tokens */
+    --sidebar-background: 0 0% 98%;
+    --sidebar-foreground: 240 5.3% 26.1%;
+    --sidebar-primary: 142 71% 29%;
+    --sidebar-primary-foreground: 0 0% 98%;
+    --sidebar-accent: 140 16% 92%;
+    --sidebar-accent-foreground: 142 47% 18%;
+    --sidebar-border: 140 16% 85%;
+    --sidebar-ring: 164 86% 39%;
+
+    /* Design tokens */
+    --brand: 158 64% 22%;
+    --brand-2: 170 65% 36%;
+    --gradient-primary: linear-gradient(135deg, hsl(var(--brand)/0.95), hsl(var(--brand-2)));
+    --shadow-elegant: 0 10px 30px -10px hsl(var(--brand)/0.25);
+    --shadow-glow: 0 0 40px hsl(var(--brand-2)/0.35);
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .dark {
+    /* Dark theme */
+    --background: 222.2 84% 4.9%;
+    --foreground: 210 40% 98%;
+
+    --card: 222.2 84% 6.5%;
+    --card-foreground: 210 40% 98%;
+
+    --popover: 222.2 84% 6.5%;
+    --popover-foreground: 210 40% 98%;
+
+    --primary: 158 70% 55%;
+    --primary-foreground: 146 100% 98%;
+
+    --secondary: 155 14% 18%;
+    --secondary-foreground: 210 40% 98%;
+
+    --muted: 155 14% 18%;
+    --muted-foreground: 145 10% 70%;
+
+    --accent: 170 60% 45%;
+    --accent-foreground: 210 40% 98%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 155 14% 18%;
+    --input: 155 14% 18%;
+    --ring: 158 70% 55%;
+
+    --sidebar-background: 240 5.9% 10%;
+    --sidebar-foreground: 240 4.8% 95.9%;
+    --sidebar-primary: 144 70% 60%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 240 3.7% 15.9%;
+    --sidebar-accent-foreground: 240 4.8% 95.9%;
+    --sidebar-border: 240 3.7% 15.9%;
+    --sidebar-ring: 144 70% 60%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+@layer utilities {
+  .bg-gradient-primary { background-image: var(--gradient-primary); }
+  .shadow-elegant { box-shadow: var(--shadow-elegant); }
+  .shadow-glow { box-shadow: var(--shadow-glow); }
+  .hero-spotlight { 
+    pointer-events: none;
+    background: radial-gradient(600px circle at var(--x, 50%) var(--y, 50%), hsl(var(--brand)/0.22), transparent 60%);
+    transition: opacity var(--transition-smooth);
+  }
+}
